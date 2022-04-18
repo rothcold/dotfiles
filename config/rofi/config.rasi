@@ -1,0 +1,11 @@
+configuration {
+    lines: 12;
+    font: "Source Sans Pro 12";
+    show-icons: true;
+    display-combi: "All";
+    display-drun: "Applications";
+    combi-modi: "window,drun,run,dmenu,ssh,emoji";
+}
+
+// @theme "/home/rothcold/.local/share/rofi/themes/teal.rasi"
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"

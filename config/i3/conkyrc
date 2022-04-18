@@ -1,0 +1,47 @@
+conky.config = {
+background = false,
+out_to_console = true,
+out_to_x = false,
+update_interval = 2,
+total_run_times = 0,
+short_units = true,
+pad_percents = 3,
+
+override_utf8_locale = false,
+
+-- How strict should if_up be when testing an interface for being up?
+-- The value is one of up, link or address, to check for the interface
+-- being solely up, being up and having link or being up, having link
+-- and an assigned IP address. 
+if_up_strictness = 'address',
+
+
+-- Add spaces to keep things from moving about?  This only affects certain objects.
+-- use_spacer should have an argument of left, right, or none
+use_spacer = 'left'
+};
+
+
+conky.text = [[
+[
+  {"full_text": " ↓${downspeed wlp2s0} ", "color":"\#00fff2"},
+
+  {"full_text": " ↑${upspeed wlp2s0}  ", "color":"\#ff0000"},
+
+  {"full_text": " CPU : ${cpu cpu1}% ${freq_g 1}GHz ${exec sensors | grep -m 1 "Core 0"|awk '{print $3}'} ", "color":"\#FFFFFF"},
+
+  {"full_text": " RAM: $memperc %  ", "color":"\#FFFFFF"},
+
+  {"full_text": " Disk: ${exec df -h |grep nvme0n1p2|awk '{print $4}'} ", "color":"\#FFFFFF"},
+
+  {"full_text": " Uptime: ${uptime} ","color": "\#AAAAAA"},
+
+  {"full_text": "  ${time %I:%M %p} ","color": "\#FFFFFF"},
+
+  {"full_text": " Volume: ${exec  pactl list sinks | grep "Volume"| tail -n 2 | awk '{print substr($5, 1, index($5, "%") - 1)}' | head -n 1}%   "  , "color":"\#FFFFFF"},
+
+  {"full_text": "Battery: ${exec upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage| awk '{print $2}'} ","color": "\#AAAAAA"}
+
+],
+]];
+
