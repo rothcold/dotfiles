@@ -26,7 +26,7 @@ foreground = #008080
 foreground-alt = #00F0F0
 primary = #5976BA
 secondary = #e60053
-alert = #313131
+alert = #f10101
 
 [bar/main]
 monitor = ${env:MONITOR:eDP1}
@@ -138,7 +138,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = [ %title:0:30:...% ]
+label = [ %title:0:60:...% ]
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -217,6 +217,7 @@ label-visible-padding = 1
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
+label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-padding = 1
 
 ; Separator in between workspaces
@@ -429,6 +430,8 @@ animation-discharging-framerate = 750
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+
 
 format = <label>
 format-underline = #f50a4d
@@ -436,8 +439,8 @@ format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn = 🔥%temperature-c%
+label-warn-foreground = ${colors.alert}
 
 
 [module/powermenu]

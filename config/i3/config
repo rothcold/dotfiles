@@ -39,27 +39,13 @@ bindsym $mod+Shift+d exec --no-startup-id "rofi -modi combi -show combi -show-ic
 bindsym $mod+Control+e exec --no-startup-id "rofi -modi emoji -show emoji -show-icons"
 
 
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
-
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-#exec --no-startup-id volumeicon
-#bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-# exec --no-startup-id xfce4-power-manager
-
-################################################################################################
-
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+Ctrl+b exec alacritty -e 'bmenu'
 bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
@@ -426,12 +412,11 @@ exec --no-startup-id /home/rothcold/.config/polybar/launch.sh
 exec --no-startup-id i3-battery-popup -L 20 -t 1m -n 
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id /home/rothcold/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
-exec --no-startup-id pa-applet --disable-notifications
 # exec --no-startup-id gammy 
 
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id thunderbird
 exec --no-startup-id telegram-desktop
-exec --no-startup-id obsidian
-exec --no-startup-id code
+# exec --no-startup-id obsidian
+# exec --no-startup-id code
 exec --no-startup-id alacritty
