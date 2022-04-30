@@ -412,6 +412,7 @@ exec --no-startup-id /home/rothcold/.config/polybar/launch.sh
 exec --no-startup-id i3-battery-popup -L 20 -t 1m -n 
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id /home/rothcold/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
+exec --no-startup-id pa-applet --disable-notifications
 # exec --no-startup-id gammy 
 
 exec --no-startup-id google-chrome-stable
