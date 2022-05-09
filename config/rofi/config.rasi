@@ -1,10 +1,10 @@
 configuration {
     lines: 12;
-    font: "Source Sans Pro 12";
+    font: "Noto Sans 10";
     show-icons: true;
     display-combi: "All";
     display-drun: "Applications";
-    combi-modi: "window,drun,run,dmenu,ssh,emoji";
+    combi-modi: "window,drun,run,dmenu,ssh,emoji,calc";
 }
 
 // @theme "/home/rothcold/.local/share/rofi/themes/teal.rasi"
