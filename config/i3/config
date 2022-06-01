@@ -45,8 +45,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 
 # Start Applications
 bindsym $mod+Ctrl+b exec alacritty -e 'bmenu'
-bindsym $mod+F3 exec pcmanfm
-bindsym $mod+Shift+F3 exec pcmanfm_pkexec
+bindsym $mod+F3 exec thunar
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 # bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -176,8 +175,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # Open applications on specific workspaces
 assign [class="Google-chrome"] $ws1
-assign [class="firefox"] $ws1
-assign [class="Navigator"] $ws1
+assign [class="Chromium"] $ws1
 assign [class="Code"] $ws2
 assign [class="Alacritty"] $ws3
 assign [class="obsidian"] $ws4
@@ -197,7 +195,6 @@ for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Oblogout"] fullscreen enable
@@ -413,6 +410,7 @@ exec --no-startup-id i3-battery-popup -L 20 -t 1m -n
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id /home/rothcold/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
 exec --no-startup-id pa-applet --disable-notifications
+exec --no-startup-id easyeffects --gapplication-service
 # exec --no-startup-id gammy 
 
 exec --no-startup-id google-chrome-stable
