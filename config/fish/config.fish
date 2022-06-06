@@ -8,6 +8,7 @@ function init
 	alias govm=g
 	alias swapctrl='setxkbmap -option "ctrl:nocaps"'
 	swapctrl
+	fenv source $HOME/.profile
 end
 
 function fish_greeting
