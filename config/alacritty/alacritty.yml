@@ -33,10 +33,10 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
-    y: 0
+    x: 4
+    y: 4
 
-  opacity: 0.9
+  opacity: 1
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
 
@@ -608,31 +608,31 @@ key_bindings:
   - { key: F11, mods: Super, chars: "\e[23;3~" }
   - { key: F12, mods: Super, chars: "\e[24;3~" }
   - { key: NumpadEnter, chars: "\n" }
+theme: Solarized-Light
 colors:
-  name: Gnometerm
-  author: ""
+  # Default colors
   primary:
-    background: "#000000"
-    foreground: "#ffffff"
-  cursor:
-    text: "#000000"
-    cursor: "#ffffff"
+    background: '0xfdf6e3'
+    foreground: '0x586e75'
+
+  # Normal colors
   normal:
-    black: "#000000"
-    red: "#cc0000"
-    green: "#4e9a06"
-    yellow: "#c4a000"
-    blue: "#3465a4"
-    magenta: "#75507b"
-    cyan: "#06989a"
-    white: "#d3d7cf"
+    black:   '0x073642'
+    red:     '0xdc322f'
+    green:   '0x859900'
+    yellow:  '0xb58900'
+    blue:    '0x268bd2'
+    magenta: '0xd33682'
+    cyan:    '0x2aa198'
+    white:   '0xeee8d5'
+
+  # Bright colors
   bright:
-    black: "#555753"
-    red: "#ef2929"
-    green: "#8ae234"
-    yellow: "#fce94f"
-    blue: "#729fcf"
-    magenta: "#ad7fa8"
-    cyan: "#34e2e2"
-    white: "#eeeeec"
-theme: Gnometerm
+    black:   '0x002b36'
+    red:     '0xcb4b16'
+    green:   '0x586e75'
+    yellow:  '0x657b83'
+    blue:    '0x839496'
+    magenta: '0x6c71c4'
+    cyan:    '0x93a1a1'
+    white:   '0xfdf6e3'

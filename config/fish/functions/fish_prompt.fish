@@ -1,1 +1,1 @@
-/home/rothcold/.local/share/omf/themes/random/fish_prompt.fish
+/home/rothcold/.local/share/omf/themes/zephyr/fish_prompt.fish

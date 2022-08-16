@@ -19,11 +19,11 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;background = #84A729
-background = #010101
-background-alt = #101010
+background = #008080
+background-alt = #00C0C0
 ;foreground = ${xrdb:color7:#222}
-foreground = #008080
-foreground-alt = #00F0F0
+foreground = #333333
+foreground-alt = #FFFF00
 primary = #5976BA
 secondary = #e60053
 alert = #f10101
@@ -54,7 +54,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Iosevka:pixelsize=11;1
-font-1 = MiSans:pixelsize=11;1
+font-1 = Noto Sans CJK SC:pixelsize=11;1
 ;font-2 = Noto Color Emoji:scale=10;0
 font-2 = JoyPixels:scale=10;0
 
@@ -202,20 +202,20 @@ label-mode-padding = 1
 label-mode-foreground = #000
 
 ; focused = Active workspace on focused monitor
-label-focused = %name%
+label-focused = %icon%
 label-focused-padding = 1
 label-focused-foreground = ${colors.foreground-alt}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
+label-unfocused = %icon%
 label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %name%
+label-visible = %icon%
 label-visible-padding = 1
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %name%
+label-urgent = %icon%
 label-urgent-background = ${colors.alert}
 label-urgent-foreground = ${colors.foreground-alt}
 label-urgent-padding = 1
@@ -255,7 +255,7 @@ label-song-ellipsis = true
 
 host = 127.0.0.1
 port = 6600
-password = 1qaz#EDC
+# password = 
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -334,7 +334,7 @@ date-alt = %Y-%m-%d
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-underline = #0a6cf5
+format-underline = #aa6cf5
 
 label = %date% %time%
 

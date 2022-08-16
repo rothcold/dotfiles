@@ -43,6 +43,12 @@ bindsym $mod+Control+e exec --no-startup-id "rofi -modi emoji -show emoji -show-
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
+# Media controls
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPause exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+
 # Start Applications
 bindsym $mod+Ctrl+b exec alacritty -e 'bmenu'
 bindsym $mod+F3 exec thunar
@@ -229,7 +235,6 @@ set $mode_system (l)ock, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3lock --nofork -t -i /home/rothcold/.lock-background.png -c 010101, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
 
@@ -338,9 +343,9 @@ bindsym $mod+m bar mode toggle
 #  client.focused		#AFFFFF #00FFFF #333333 #454948
 #  client.urgent			#CB4B16 #FDF6E3 #333333 #268BD2
 #  client.placeholder		#000000 #0c0c0c #ffffff #000000 
-client.focused          #303030 #151515 #008080 #2e9ef4
-client.focused_inactive #303030 #050505 #008080 #292d2e
-client.unfocused        #303030 #010101 #008080 #484e50
+client.focused          #303030 #008080 #FFFF00 #2e9ef4
+client.focused_inactive #303030 #002020 #00FFFF #292d2e
+client.unfocused        #303030 #006060 #AAAA00 #484e50
 client.urgent           #2f343a #900000 #ffffff #900000
 
   client.background       #2B2C2B
@@ -351,7 +356,7 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # Set inner/outer gaps
 # gaps inner 14
-# gaps outer -2
+# gaps outer 2
 
 gaps inner 0
 gaps outer 0
