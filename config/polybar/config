@@ -54,9 +54,8 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Iosevka:pixelsize=11;1
-font-1 = Noto Sans CJK SC:pixelsize=11;1
-;font-2 = Noto Color Emoji:scale=10;0
-font-2 = JoyPixels:scale=10;0
+font-1 = MiSans:pixelsize=11;1
+font-2 = Symbola:scale=10;0
 
 modules-left = i3
 modules-center = xwindow
@@ -109,8 +108,7 @@ module-margin-right = 1
 
 font-0 = Iosevka:pixelsize=11;1
 font-1 = MiSans:pixelsize=11;1
-;font-2 = Noto Color Emoji:scale=10;0
-font-2 = JoyPixels:scale=10;0
+font-2 = Symbola:scale=10;0
 
 modules-left = pulseaudio filesystem cpu memory battery temperature 
 modules-center = wlan
@@ -162,7 +160,15 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = 🗄%mountpoint%: %percentage_used%%
+label-full = %percentage_raw%%
+format-full-suffix= " 🔌"
+format-full-suffix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+
+label-mounted = %mountpoint%: %percentage_used%%
+format-mounted-prefix = "🖥 "
+format-mounted-prefix-foreground = ${colors.foreground-alt}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 format-mounted-underline = #000FFF
@@ -237,13 +243,13 @@ ws-icon-8 = 9;玖
 type = internal/mpd
 format-online =  | <label-song> | <label-time> | <icon-random> | <icon-repeat> | <icon-single> | <icon-prev> | <toggle> | <icon-next>
 
-icon-random = RD
-icon-repeat = RP
-icon-single = S
-icon-play = >
-icon-pause = =
-icon-prev = <-
-icon-next = ->
+icon-random = 🔀
+icon-repeat = 🔁
+icon-single = 🔂
+icon-play = ▶ 
+icon-pause = ⏸
+icon-prev = ⏮
+icon-next = ⏭
 icon-font = 3
 
 toggle-on-foreground = ${colors.foreground-alt}
@@ -355,10 +361,10 @@ label-muted-foreground = ${colors.foreground-alt}
 label-muted-font = 3
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #006060
-bar-volume-foreground-1 = #008080
-bar-volume-foreground-2 = #00A0A0
-bar-volume-foreground-3 = #00C0C0
+bar-volume-foreground-0 = #005050
+bar-volume-foreground-1 = #007070
+bar-volume-foreground-2 = #009000
+bar-volume-foreground-3 = #00A0A0
 bar-volume-gradient = true
 ; bar-volume-indicator = |
 bar-volume-indicator = 
@@ -366,7 +372,7 @@ bar-volume-fill = ─
 ;bar-volume-fill = =
 bar-volume-empty = ─
 ;bar-volume-empty = " "
-bar-volume-empty-foreground = ${colors.background-alt}
+bar-volume-empty-foreground = ${colors.background}
 
 label = %percentage:2%%
 [module/alsa]
@@ -409,7 +415,7 @@ format-discharging = <label-discharging> <animation-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 label-full = %percentage_raw%%
-format-full-suffix= "🔋"
+format-full-suffix= " 🔌"
 format-full-suffix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
