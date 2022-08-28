@@ -8,4 +8,5 @@ configuration {
 }
 
 // @theme "/home/rothcold/.local/share/rofi/themes/teal.rasi"
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "/usr/share/rofi/themes/Arc.rasi"

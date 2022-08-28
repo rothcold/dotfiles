@@ -303,9 +303,14 @@ type = internal/network
 interface = wlp2s0
 interval = 3.0
 
-format-connected = <label-connected> 
+format-connected = <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %{T3}↑%{T-} %upspeed%  %{T3}↓%{T-} %downspeed%
+label-connected = %upspeed% | %downspeed%
+format-connected-prefix = "↖ "
+format-connected-prefix-foreground = #CC00CC
+format-connected-suffix = " ↘"
+format-connected-suffix-foreground = #00CCCC
+
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
