@@ -2,7 +2,6 @@
 node_modules/
 .m2/
 .gradle/
-.config/
 Android/
 .android/
 .npm/
@@ -18,3 +17,23 @@ Android/
 .go/
 .thunderbird/
 .local/share/Steam
+.local/share/TelegramDesktop/tdata/user_data/cache
+.btfs/
+.cmake/
+.degit/
+.eclipse/
+.ethereum/
+.mozilla/
+.pnpm-store/
+.fly/agent-logs/
+.java/
+.local/share/DBeaverData/
+.local/share/GOG.com/
+.local/share/Google/
+.local/share/JetBrains/
+.local/share/Paradigma Software/
+.local/share/Trash/
+.local/share/lutris/
+.local/share/wemeetapp/
+.local/share/TelegramDesktop/tdata/user_data/cache/
+.local/share/TelegramDesktop/tdata/user_data/media_cache/

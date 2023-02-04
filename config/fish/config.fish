@@ -13,7 +13,7 @@ end
 
 function fish_greeting
 	neofetch
-	fortune -e tang300 song100 | cowsay -f koala -W 80
+	fortune -e firefly | cowsay -f koala -W 80
 end 
 
 

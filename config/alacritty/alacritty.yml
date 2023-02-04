@@ -10,7 +10,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: alacritty
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -146,22 +146,6 @@ font:
   glyph_offset:
     x: 0
     y: 0
-
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -608,33 +592,31 @@ key_bindings:
   - { key: F11, mods: Super, chars: "\e[23;3~" }
   - { key: F12, mods: Super, chars: "\e[24;3~" }
   - { key: NumpadEnter, chars: "\n" }
-theme: Gruvbox-Light
+theme: Tomorrow-Night-Bright
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '#f9f5d7'
-    background: '#fbf1c7'
-    # soft contrast: background = '#f2e5bc'
-    foreground: '#3c3836'
+    background: '#000000'
+    foreground: '#eaeaea'
 
   # Normal colors
   normal:
-    black: '#fbf1c7'
-    red: '#cc241d'
-    green: '#98971a'
-    yellow: '#d79921'
-    blue: '#458588'
-    magenta: '#b16286'
-    cyan: '#689d6a'
-    white: '#7c6f64'
+    black: '#000000'
+    red: '#d54e53'
+    green: '#b9ca4a'
+    yellow: '#e6c547'
+    blue: '#7aa6da'
+    magenta: '#c397d8'
+    cyan: '#70c0ba'
+    white: '#424242'
 
   # Bright colors
   bright:
-    black: '#928374'
-    red: '#9d0006'
-    green: '#79740e'
-    yellow: '#b57614'
-    blue: '#076678'
-    magenta: '#8f3f71'
-    cyan: '#427b58'
-    white: '#3c3836'
+    black: '#666666'
+    red: '#ff3334'
+    green: '#9ec400'
+    yellow: '#e7c547'
+    blue: '#7aa6da'
+    magenta: '#b77ee0'
+    cyan: '#54ced6'
+    white: '#2a2a2a'

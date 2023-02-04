@@ -2,6 +2,7 @@ configuration {
     lines: 12;
     font: "Noto Sans 10";
     show-icons: true;
+    icon-theme: "BeautyLine";
     display-combi: "All";
     display-drun: "Applications";
     combi-modi: "window,drun,run,dmenu,ssh,emoji,calc";
@@ -9,4 +10,5 @@ configuration {
 
 // @theme "/home/rothcold/.local/share/rofi/themes/teal.rasi"
 //@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-@theme "/usr/share/rofi/themes/Arc.rasi"
+//@theme "/usr/share/rofi/themes/Arc.rasi"
+@theme "/usr/share/rofi/themes/gruvbox-light.rasi"
