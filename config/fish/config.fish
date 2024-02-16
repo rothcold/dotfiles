@@ -7,6 +7,7 @@ function init
     set -gx GOPATH $HOME/Workspaces/go
     set -gx GOROOT $HOME/.go
     set -gx PATH $GOPATH/bin $PATH
+    set -gx PATH $HOME/.cargo/bin $PATH
     # g-install: do NOT edit, see https://github.com/stefanmaric/g
     alias govm=g
     if type -q setzkbmap
