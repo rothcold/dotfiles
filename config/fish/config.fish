@@ -15,10 +15,12 @@ function init
         swapctrl
     end
     fenv source $HOME/.profile
+
+    pyenv init - | source
 end
 
 function fish_greeting
-    neofetch
+    fastfetch
     fortune -e song100-hant tang300-hant
 end
 
