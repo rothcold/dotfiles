@@ -27,7 +27,7 @@ font xft:"Noto Sans CJK SC" 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Return exec --no-startup-id alacritty
 
 bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
@@ -186,12 +186,13 @@ assign [class="Google-chrome"] $ws1
 assign [class="Chromium"] $ws1
 assign [class="firefox"] $ws1
 assign [class="Code"] $ws2
-assign [class="org.wezfurlong.wezterm"] $ws3
+assign [class="Alacritty"] $ws3
 assign [class="obsidian"] $ws4
 assign [class="thunderbird"] $ws5
 assign [class="TelegramDesktop"] $ws7
 assign [class="discord"] $ws7
 assign [class="Lark"] $ws8
+assign [class="wechat"] $ws9
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
 
@@ -427,6 +428,6 @@ exec --no-startup-id pa-applet --disable-notifications
 # exec --no-startup-id telegram-desktop
 # exec --no-startup-id obsidian
 # exec --no-startup-id code
-exec --no-startup-id wezterm
+exec --no-startup-id alacritty
 
 exec --no-startup-id greenclip daemon>/dev/null
