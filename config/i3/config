@@ -420,7 +420,6 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id /home/rothcold/.config/polybar/launch.sh
 exec --no-startup-id i3-battery-popup -L 20 -t 1m -n 
 exec --no-startup-id fcitx5 -d
-exec --no-startup-id pa-applet --disable-notifications
 exec --no-startup-id dunst
 #exec --no-startup-id easyeffects --gapplication-service
 # exec --no-startup-id gammy 
