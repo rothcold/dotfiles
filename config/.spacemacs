@@ -568,6 +568,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq-default dotspacemacs-line-numbers t)
   (setq-default go-tab-width 4)
   (go :variable go-format-before-save t)
+  (setq-default tramp-default-user "rothcold")
   )
 
 

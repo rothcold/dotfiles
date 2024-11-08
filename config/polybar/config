@@ -19,19 +19,19 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 ;background = #84A729
-background = #000000
-background-alt = #FFFF00
+background = #e7e8eb
+background-alt = #bdc3c7
 ;foreground = ${xrdb:color7:#222}
-foreground = #008080
-foreground-alt = #00C0C0
-primary = #5976BA
-secondary = #e60053
-alert = #f10101
+foreground = #5c616c
+foreground-alt = #a3a5ac
+primary = #3daee9
+secondary = #f67400
+alert = #da4453
 
 [bar/main]
 monitor = ${env:MONITOR:eDP1}
 width = 100%
-height = 30
+height = 40
 # bottom = true
 ;offset-x = 1%
 ;offset-y = 1%
@@ -53,12 +53,12 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Iosevka:pixelsize=11;1
-font-1 = Noto Sans CJK SC:pixelsize=11;1
-font-2 = Symbola:scale=10;0
+font-0 = Iosevka:pixelsize=12;1
+font-1 = LXGW WenKai:pixelsize=12;1
+font-2 = Symbola:scale=11;0
 
 modules-left = i3
-modules-center = mpd
+modules-center = xwindow
 modules-right = date tray
 
 ;tray-background = #0063ff
@@ -105,11 +105,11 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Iosevka:pixelsize=11;1
-font-1 = LXGW Wenkai:pixelsize=11;1
+font-1 = LXGW WenKai:pixelsize=11;1
 font-2 = Symbola:scale=10;0
 
 modules-left = pulseaudio filesystem cpu memory battery temperature
-modules-center = 
+modules-center =  mpd
 modules-right = wlan
 
 ;tray-background = #0063ff
@@ -261,7 +261,6 @@ label-song-ellipsis = true
 
 host = 127.0.0.1
 port = 6600
-password = 1qaz#EDC
 
 [module/xbacklight]
 type = internal/xbacklight

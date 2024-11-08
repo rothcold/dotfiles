@@ -26,6 +26,6 @@ style = "Regular"
 
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/papertheme.toml"
+    "~/.config/alacritty/themes/themes/arc_light.toml"
 ]
 

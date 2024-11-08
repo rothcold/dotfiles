@@ -1,6 +1,6 @@
 configuration {
     lines: 12;
-    font: "Noto Sans 10";
+    font: "Liberation Sans 11";
     show-icons: true;
     icon-theme: "BeautyLine";
     display-combi: "All";
@@ -9,6 +9,6 @@ configuration {
 }
 
 // @theme "/home/rothcold/.local/share/rofi/themes/teal.rasi"
-//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-//@theme "/usr/share/rofi/themes/Arc.rasi"
-@theme "/usr/share/rofi/themes/gruvbox-light.rasi"
+// @theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "/usr/share/rofi/themes/Arc.rasi"
+// @theme "/usr/share/rofi/themes/gruvbox-light.rasi"

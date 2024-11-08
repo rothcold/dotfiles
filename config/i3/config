@@ -56,7 +56,7 @@ bindsym $mod+Ctrl+b exec wezterm -e 'bmenu'
 bindsym $mod+F3 exec thunar
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym --release Mod1+Shift+4 exec --no-startup-id maim -s /home/rothcold/Pictures/$(date +%s).png
 bindsym --release Mod1+Ctrl+Shift+4 exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 bindsym --release Mod1+Shift+3 exec --no-startup-id maim /home/rothcold/Pictures/$(date +%s).png
@@ -188,6 +188,7 @@ assign [class="firefox"] $ws1
 assign [class="Code"] $ws2
 assign [class="Alacritty"] $ws3
 assign [class="obsidian"] $ws4
+assign [class="anytype"] $ws4
 assign [class="thunderbird"] $ws5
 assign [class="TelegramDesktop"] $ws7
 assign [class="discord"] $ws7
@@ -200,6 +201,7 @@ assign [class="wechat"] $ws9
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [title="Lark会议"] floating enable
+for_window [class="zoom"] floating enable
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
@@ -239,8 +241,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+bindsym $mod+0 mode "$mode_system"
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3lock --nofork -t -i /home/rothcold/.lock-background.png -c 010101, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
@@ -280,17 +282,15 @@ mode "resize" {
 # bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id picom -b
+exec --no-startup-id feh --bg-tile $HOME/.config/i3/solid_color.png
 #exec --no-startup-id manjaro-hello
-exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -detectsleep -locker blurlock
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -t -i /home/rothcold/.lock-background.png -c 010101
-exec --no-startup-id autorandr -c
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -t -c 010101
 exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -350,12 +350,12 @@ bindsym $mod+m bar mode toggle
 #  client.focused		#AFFFFF #00FFFF #333333 #454948
 #  client.urgent			#CB4B16 #FDF6E3 #333333 #268BD2
 #  client.placeholder		#000000 #0c0c0c #ffffff #000000 
-client.focused          #333333 #000000 #008080 #2e9ef4
-client.focused_inactive #333333 #111111 #007070 #292d2e
-client.unfocused        #333333 #202020 #006060 #484e50
+client.focused          #E1E1E1 #e7e8eb #5c616c #2e9ef4
+client.focused_inactive #E1E1E1 #d7d8db #5c616c #292d2e
+client.unfocused        #E1E1E1 #c7c8cb #5c616c #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
 
-client.background       #2B2C2B
+client.background       #e7e8eb
 
 #############################
 ### settings for i3-gaps: ###
@@ -421,6 +421,7 @@ exec --no-startup-id /home/rothcold/.config/polybar/launch.sh
 exec --no-startup-id i3-battery-popup -L 20 -t 1m -n 
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id pa-applet --disable-notifications
+exec --no-startup-id dunst
 #exec --no-startup-id easyeffects --gapplication-service
 # exec --no-startup-id gammy 
 
