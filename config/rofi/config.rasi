@@ -1,14 +1,18 @@
-configuration {
-    lines: 12;
-    font: "Liberation Sans 11";
+configuration{
+    modi: "run,drun,window";
+    icon-theme: "Oranchelo";
     show-icons: true;
-    icon-theme: "BeautyLine";
-    display-combi: "All";
-    display-drun: "Applications";
-    combi-modi: "window,drun,run,dmenu,ssh,emoji,calc";
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 󰕰  Window";
+    display-Network: " 󰤨  Network";
+    sidebar-mode: true;
 }
 
-// @theme "/home/rothcold/.local/share/rofi/themes/teal.rasi"
-// @theme "/usr/share/rofi/themes/Arc-Dark.rasi"
-@theme "/usr/share/rofi/themes/Arc.rasi"
-// @theme "/usr/share/rofi/themes/gruvbox-light.rasi"
+@theme "catppuccin-latte"
+

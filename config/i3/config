@@ -4,6 +4,33 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
+set $rosewater #dc8a78
+set $flamingo #dd7878
+set $pink #ea76cb
+set $mauve #8839ef
+set $red #d20f39
+set $maroon #e64553
+set $peach #fe640b
+set $yellow #df8e1d
+set $green #40a02b
+set $teal #179299
+set $sky #04a5e5
+set $sapphire #209fb5
+set $blue #1e66f5
+set $lavender #7287fd
+set $text #4c4f69
+set $subtext1 #5c5f77
+set $subtext0 #6c6f85
+set $overlay2 #7c7f93
+set $overlay1 #8c8fa1
+set $overlay0 #9ca0b0
+set $surface2 #acb0be
+set $surface1 #bcc0cc
+set $surface0 #ccd0da
+set $base #eff1f5
+set $mantle #e6e9ef
+set $crust #dce0e8
+
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
@@ -44,6 +71,10 @@ bindsym $mod+Control+e exec --no-startup-id "rofi -modi emoji -show emoji -show-
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Media controls
 bindsym XF86AudioPlay exec mpc toggle
@@ -343,19 +374,12 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  # client.focused          #446A37  #446A37 #CCCCCC #FDF6E3
-  # client.focused_inactive #68945C #68945C #333333 #454948
-#  client.focused_inactive	#AFFFFF #AFEEEE #333333 #FDF6E3
-#  client.unfocused		#AFFFFF #AFEEEE #333333 #454948
-#  client.focused		#AFFFFF #00FFFF #333333 #454948
-#  client.urgent			#CB4B16 #FDF6E3 #333333 #268BD2
-#  client.placeholder		#000000 #0c0c0c #ffffff #000000 
-client.focused          #E1E1E1 #e7e8eb #5c616c #2e9ef4
-client.focused_inactive #E1E1E1 #d7d8db #5c616c #292d2e
-client.unfocused        #E1E1E1 #c7c8cb #5c616c #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
-
-client.background       #e7e8eb
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 #############################
 ### settings for i3-gaps: ###

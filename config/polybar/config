@@ -16,17 +16,21 @@
 ;
 ;==========================================================
 
+[global/wm]
+include-file = $HOME/.config/polybar/latte.ini
+margin-top = 0
+margin-bottom = 0
+
 [colors]
-;background = ${xrdb:color0:#222}
-;background = #84A729
-background = #e7e8eb
-background-alt = #bdc3c7
-;foreground = ${xrdb:color7:#222}
-foreground = #5c616c
-foreground-alt = #a3a5ac
-primary = #3daee9
-secondary = #f67400
-alert = #da4453
+background = ${colors.base}
+background-alt = ${colors.mantle}
+foreground = ${colors.text}
+foreground-alt = ${colors.surface2}
+primary = ${colors.teal}
+secondary = ${colors.sky}
+alert = ${colors.red}
+
+
 
 [bar/main]
 monitor = ${env:MONITOR:eDP1}
@@ -42,10 +46,10 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = ${subtext1}
 
 border-size = 0
-border-color = #000000
+border-color = #{colors.crust}
 
 padding-left = 1
 padding-right = 1
@@ -93,10 +97,10 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = ${colors.subtext1}
 
 border-size = 0
-border-color = #00000000
+border-color = ${colors.transparent}
 
 padding-left = 1
 padding-right = 1
@@ -171,7 +175,7 @@ format-mounted-prefix = "🖥 "
 format-mounted-prefix-foreground = ${colors.foreground-alt}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-format-mounted-underline = #000FFF
+format-mounted-underline = ${colors.sapphire}
 
 [module/bspwm]
 type = internal/bspwm
@@ -205,16 +209,17 @@ wrapping-scroll = false
 pin-workspaces = true
 
 label-mode-padding = 1
-label-mode-foreground = #000
+label-mode-foreground = #{colors.foreground}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
 label-focused-padding = 1
-label-focused-foreground = ${colors.foreground-alt}
+label-focused-foreground = ${colors.foreground}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %icon%
 label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.foreground-alt}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %icon%
@@ -223,7 +228,7 @@ label-visible-padding = 1
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
 label-urgent-background = ${colors.alert}
-label-urgent-foreground = ${colors.foreground-alt}
+label-urgent-foreground = ${colors.foreground}
 label-urgent-padding = 1
 
 ; Separator in between workspaces
@@ -286,7 +291,7 @@ type = internal/cpu
 interval = 2
 format-prefix = "CPU "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.rosewater}
 label = %percentage:2%%
 
 [module/memory]
@@ -294,7 +299,7 @@ type = internal/memory
 interval = 2
 format-prefix = "MEM "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.blue}
 label = %percentage_used%%
 
 [module/wlan]
@@ -303,12 +308,12 @@ interface = wlan0
 interval = 1.0
 
 format-connected = <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.flamingo} 
 label-connected = %upspeed% | %downspeed%
 format-connected-prefix = "↖ "
-format-connected-prefix-foreground = #CC00CC
+format-connected-prefix-foreground = ${colors.lavender}
 format-connected-suffix = " ↘"
-format-connected-suffix-foreground = #00CCCC
+format-connected-suffix-foreground = ${colors.blue}
 
 
 format-disconnected =
@@ -344,7 +349,7 @@ date-alt = %Y-%m-%d
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-underline = #aa6cf5
+format-underline = ${colors.peach}
 
 label = %date% %time%
 
@@ -354,7 +359,7 @@ type = internal/pulseaudio
 format-volume = "<label-volume> <bar-volume>"
 format-volume-prefix = "🔊"
 format-volume-foreground = ${colors.foreground-alt}
-format-volume-underline = #ff00ff
+format-volume-underline = ${colors.yellow} 
 format-volume-font = 3
 ;label-volume = %percentage:2%%
 label-volume = ""
@@ -412,7 +417,7 @@ full-at = 85
 
 label-charging = %percentage_raw%%
 format-charging = <label-charging> <animation-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.teal} 
 
 label-discharging = %percentage_raw%%
 format-discharging = <label-discharging> <animation-discharging> 
@@ -444,7 +449,7 @@ hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp2_input
 
 
 format = <label>
-format-underline = #f50a4d
+format-underline = ${colors.red}
 format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -489,9 +494,5 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 ;pseudo-transparency = false
-
-[global/wm]
-margin-top = 0
-margin-bottom = 0
 
 ; vim:ft=dosini
