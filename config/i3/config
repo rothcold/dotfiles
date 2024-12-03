@@ -217,10 +217,13 @@ assign [class="Google-chrome"] $ws1
 assign [class="Chromium"] $ws1
 assign [class="firefox"] $ws1
 assign [class="Code"] $ws2
+assign [class="Windsurf"] $ws2
 assign [class="Alacritty"] $ws3
 assign [class="obsidian"] $ws4
 assign [class="anytype"] $ws4
 assign [class="thunderbird"] $ws5
+assign [class="Proton Mail"] $ws5
+assign [class="steam"] $ws6
 assign [class="TelegramDesktop"] $ws7
 assign [class="discord"] $ws7
 assign [class="Lark"] $ws8
@@ -260,7 +263,7 @@ for_window [class="wemeetapp"] floating enable
 for_window [class="steam_app_1794680"] floating enable 
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# for_window [urgent=latest] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -374,7 +377,7 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused           $lavender $base $text  $rosewater $lavender
+client.focused           $lavender $crust $text  $rosewater $lavender
 client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
 client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
