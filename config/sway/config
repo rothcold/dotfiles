@@ -1,0 +1,434 @@
+# i3 config file (v4)
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+xwayland enable
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod4
+
+set $rosewater #dc8a78
+set $flamingo #dd7878
+set $pink #ea76cb
+set $mauve #8839ef
+set $red #d20f39
+set $maroon #e64553
+set $peach #fe640b
+set $yellow #df8e1d
+set $green #40a02b
+set $teal #179299
+set $sky #04a5e5
+set $sapphire #209fb5
+set $blue #1e66f5
+set $lavender #7287fd
+set $text #4c4f69
+set $subtext1 #5c5f77
+set $subtext0 #6c6f85
+set $overlay2 #7c7f93
+set $overlay1 #8c8fa1
+set $overlay0 #9ca0b0
+set $surface2 #acb0be
+set $surface1 #bcc0cc
+set $surface0 #ccd0da
+set $base #eff1f5
+set $mantle #e6e9ef
+set $crust #dce0e8
+
+# set default desktop layout (default is tiling)
+# workspace_layout tabbed <stacking|tabbed>
+
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+default_border pixel 1
+default_floating_border normal
+
+# Hide borders
+hide_edge_borders none
+
+# change borders
+bindsym $mod+u border none
+bindsym $mod+y border pixel 1
+bindsym $mod+n border normal
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font xft:"Noto Sans CJK SC" 11
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+for_window [shell="xwayland"] title_format "[XWayland] %title"
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id alacritty
+
+bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start program launcher
+bindsym $mod+d exec --no-startup-id "rofi -modi drun -show drun -show-icons"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -modi combi -show combi -show-icons"
+bindsym $mod+Control+e exec --no-startup-id "rofi -modi emoji -show emoji -show-icons"
+
+bindsym $mod+p exec --no-startup-id wlprop > /tmp/wlprop.list
+
+bindsym $mod+Shift+n exec swaync-client -t
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+
+# Media controls
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPause exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl -- set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86Search exec ~/.config/sway/toggle-audio-output
+
+# Start Applications
+bindsym $mod+Ctrl+b exec wezterm -e 'bmenu
+bindsym $mod+F3 exec thunar
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym Mod1+Shift+4 exec --no-startup-id sway-screenshot -m region -o /home/rothcold/Pictures
+bindsym Mod1+Ctrl+Shift+4 exec --no-startup-id sway-screenshot -m region --clipboard-only
+bindsym Mod1+Shift+3 exec --no-startup-id sway-screenshot -m window -o /home/rothcold/Pictures
+bindsym Mod1+Ctrl+Shift+3 exec --no-startup-id sway-screenshot -m window --clipboard-only
+
+
+focus_follows_mouse no
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# workspace back and forth (with/without active container)
+# workspace_auto_back_and_forth yes
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+# split orientation
+bindsym $mod+Mod1+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+Mod1+v split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
+
+# toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# toggle sticky
+bindsym $mod+Shift+s sticky toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+#navigate workspaces next / previous
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+bindsym $mod+Shift+p move workspace to output right
+bindsym $mod+Shift+u move workspace to output up
+
+# Workspace names
+# to display names or symbols instead of plain workspace numbers you can use
+# something like: set $ws1 1:mail
+#                 set $ws2 2:
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+
+# Open applications on specific workspaces
+assign [class="Google-chrome-unstable"] $ws1
+assign [app_id="google-chrome-unstable"] $ws1
+assign [app_id="Chromium"] $ws1
+assign [app_id="firefox-developer-edition"] $ws1
+assign [class="code"] $ws2
+assign [app_id="code"] $ws2
+assign [class="Windsurf"] $ws2
+assign [app_id="Windsurf"] $ws2
+assign [app_id="Alacritty"] $ws3
+assign [app_id="obsidian"] $ws4
+assign [class="anytype"] $ws4
+assign [app_id="thunderbird"] $ws5
+assign [app_id="org.telegram.desktop"] $ws7
+assign [class="discord"] $ws7
+assign [class="Lark"] $ws8
+assign [class="wechat"] $ws9
+# assign [app_id="Pcmanfm"] $ws3
+# assign [app_id="Skype"] $ws5
+
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [app_id="calamares"] floating enable border normal
+for_window [title="Lark会议"] floating enable
+for_window [app_id="zoom"] floating enable
+for_window [app_id="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [app_id="fpakman"] floating enable
+for_window [app_id="Galculator"] floating enable border pixel 1
+for_window [app_id="GParted"] floating enable border normal
+for_window [app_id="Lightdm-settings"] floating enable
+for_window [app_id="Lxappearance"] floating enable sticky enable border normal
+for_window [app_id="Manjaro Settings Manager"] floating enable border normal
+for_window [app_id="Nitrogen"] floating enable sticky enable border normal
+for_window [app_id="Oblogout"] fullscreen enable
+for_window [app_id="octopi"] floating enable
+for_window [app_id="Pamac-manager"] floating enable
+for_window [app_id="Pavucontrol"] floating enable
+for_window [app_id="qt5ct"] floating enable sticky enable border normal
+for_window [app_id="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [app_id="Simple-scan"] floating enable border normal
+for_window [app_id="(?i)System-config-printer.py"] floating enable border normal
+for_window [app_id="Skype"] floating enable border normal
+for_window [app_id="(?i)virtualbox"] floating enable border normal
+for_window [app_id="Xfburn"] floating enable
+for_window [app_id="wemeetapp"] floating enable
+# Vampire Survivors
+for_window [app_id="steam_app_1794680"] floating enable 
+
+# switch to workspace with urgent window automatically
+# for_window [urgent=latest] focus
+
+# reload the configuration file
+bindsym $mod+Shift+c exec swaymsg reload
+
+# exit sway (logs you out of your wayland session)
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes, exit' 'swaymsg exit'"
+
+set $mode_system (l)ock, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+bindsym $mod+0 mode "$mode_system"
+mode "$mode_system" {
+    bindsym l exec --no-startup-id swaylock -c 000000, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+input type:keyboard {
+    xkb_options ctrl:swapcaps
+}
+
+input type:touchpad {
+    natural_scroll enabled
+}
+
+# Lock screen
+# bindsym $mod+9 exec --no-startup-id blurlock
+
+# Autostart applications
+exec --no-startup-id blueman-applet
+# exec_always --no-startup-id sbxkb
+# exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_green
+# exec --no-startup-id xautolock -detectsleep -locker blurlock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock -c 010101
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+# bar {
+  # position top
+  # status_command ~/.i3/conky.sh
+  # hidden_state show
+  # tray_output primary
+
+  # colors { 
+    # statusline #FFFFFF
+    # background #13393E
+    # inactive_workspace #6E9BC5 #6E9BC5 #000000
+    # focused_workspace #AED0EE #AED0EE #666666
+  # }
+# } 
+# hide/unhide i3status bar
+bindsym $mod+m bar mode toggle
+
+# Theme colors
+# class                   border  backgr. text    indic.   child_border
+client.focused           $lavender $crust $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+# Set inner/outer gaps
+# gaps inner 14
+# gaps outer 2
+
+gaps inner 0
+gaps outer 0
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+exec --no-startup-id fcitx5 -d
+exec_always killall waybar; sleep 1; waybar
+#exec --no-startup-id easyeffects --gapplication-service
+# exec --no-startup-id gammy 
+
+# exec --no-startup-id thunderbird
+# exec --no-startup-id telegram-desktop
+# exec --no-startup-id obsidian
+# exec --no-startup-id code
+exec --no-startup-id alacritty
+exec --no-startup-id greenclip daemon>/dev/null
+
+exec dbus-update-activation-environment --all
+
