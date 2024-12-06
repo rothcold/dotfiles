@@ -230,6 +230,7 @@ assign [class="Windsurf"] $ws2
 assign [app_id="Windsurf"] $ws2
 assign [app_id="Alacritty"] $ws3
 assign [app_id="obsidian"] $ws4
+assign [class="obsidian"] $ws4
 assign [class="anytype"] $ws4
 assign [app_id="thunderbird"] $ws5
 assign [app_id="org.telegram.desktop"] $ws7
