@@ -84,8 +84,8 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioPause exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioLowerVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioRaiseVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-mute @DEFAULT_SINK@ 0 && pactl -- set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl -- set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86Search exec ~/.config/sway/toggle-audio-output
@@ -432,7 +432,7 @@ exec_always killall wl-paste; sleep 1; wl-paste --watch cliphist store
 # exec --no-startup-id obsidian
 # exec --no-startup-id code
 exec --no-startup-id alacritty
-exec --no-startup-id greenclip daemon>/dev/null
+# exec --no-startup-id greenclip daemon>/dev/null
 
 exec dbus-update-activation-environment --all
 
