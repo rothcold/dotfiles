@@ -350,6 +350,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock -c 010101
   # }
 # } 
 # hide/unhide i3status bar
+bar swaybar_command waybar
+
 bindsym $mod+m bar mode toggle
 
 # Theme colors
@@ -422,9 +424,9 @@ mode "$mode_gaps_outer" {
 }
 
 exec --no-startup-id fcitx5 -d
-exec_always killall waybar; sleep 1; waybar
+# exec_always killall waybar; sleep 1; waybar
 exec_always killall wl-paste; sleep 1; wl-paste --watch cliphist store
-#exec --no-startup-id easyeffects --gapplication-service
+# exec --no-startup-id easyeffects --gapplication-service
 # exec --no-startup-id gammy 
 
 # exec --no-startup-id thunderbird
