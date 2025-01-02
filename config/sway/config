@@ -34,6 +34,15 @@ set $crust #dce0e8
 
 output * bg $base solid_color
 
+set $my_cursor catppuccin-latte-teal-cursors 
+set $my_cursor_size 24
+
+seat seat0 xcursor_theme $my_cursor $my_cursor_size
+exec_always {
+    gsettings set org.gnome.desktop.interface cursor-theme $my_cursor
+    gsettings set org.gnome.desktop.interface cursor-size $my_cursor_size
+}
+
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
@@ -425,7 +434,7 @@ mode "$mode_gaps_outer" {
 
 exec --no-startup-id fcitx5 -d
 # exec_always killall waybar; sleep 1; waybar
-exec_always killall wl-paste; sleep 1; wl-paste --watch cliphist store
+exec --no-startup-id wl-paste --watch cliphist store
 # exec --no-startup-id easyeffects --gapplication-service
 # exec --no-startup-id gammy 
 
