@@ -26,6 +26,6 @@ style = "Regular"
 
 [general]
 import = [
-    "~/.config/alacritty/catppuccin-latte.toml"
+    "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
