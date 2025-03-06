@@ -1,6 +1,3 @@
-# i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 xwayland enable
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -32,7 +29,7 @@ set $base #1e1e2e
 set $mantle #181825
 set $crust #11111b
 
-output * bg $base solid_color
+output * bg $surface0 solid_color
 
 set $my_cursor catppuccin-latte-teal-cursors 
 set $my_cursor_size 24
@@ -368,7 +365,7 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused           $lavender $crust $text  $rosewater $lavender
+client.focused           $green $crust $text  $rosewater $green
 client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
 client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
@@ -383,7 +380,7 @@ client.background        $base
 # gaps inner 14
 # gaps outer 2
 
-gaps inner 0
+gaps inner 5
 gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
