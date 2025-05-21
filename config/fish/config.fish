@@ -10,13 +10,7 @@ function init
     set -gx PATH $HOME/.cargo/bin $PATH
     # g-install: do NOT edit, see https://github.com/stefanmaric/g
     alias govm=g
-    if type -q setzkbmap
-        alias swapctrl='setxkbmap -option "ctrl:nocaps"'
-        swapctrl
-    end
     fenv source $HOME/.profile
-
-    pyenv init - | source
 end
 
 function fish_greeting
