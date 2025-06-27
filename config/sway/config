@@ -65,7 +65,7 @@ floating_modifier $mod
 for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id wezterm
 
 bindsym $mod+v exec --no-startup-id cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
@@ -248,6 +248,7 @@ assign [app_id="org.telegram.desktop"] $ws7
 assign [class="discord"] $ws7
 assign [class="Lark"] $ws8
 assign [class="wechat"] $ws9
+assign [class="QQ"] $ws9
 # assign [app_id="Pcmanfm"] $ws3
 # assign [app_id="Skype"] $ws5
 
@@ -444,7 +445,8 @@ exec --no-startup-id wl-paste --watch cliphist store
 # exec --no-startup-id telegram-desktop
 # exec --no-startup-id obsidian
 # exec --no-startup-id code
-exec --no-startup-id alacritty
+# exec --no-startup-id alacritty
+exec --no-startup-id wezterm
 # exec --no-startup-id greenclip daemon>/dev/null
 
 exec dbus-update-activation-environment --all
