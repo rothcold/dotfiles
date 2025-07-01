@@ -236,6 +236,7 @@ assign [class="Windsurf"] $ws2
 assign [class="Cursor"] $ws2
 assign [app_id="Windsurf"] $ws2
 assign [app_id="Cursor"] $ws2
+assign [app_id="org.wezfurlong.wezterm"] $ws3
 assign [app_id="Alacritty"] $ws3
 assign [app_id="obsidian"] $ws4
 assign [class="obsidian"] $ws4

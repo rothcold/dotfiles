@@ -12,6 +12,7 @@ window#waybar {
     border: 2px solid alpha(@crust, 0.3);
     transition-property: background-color;
     transition-duration: .5s;
+    opacity: 0.8;
 }
 
 window#waybar.hidden {
