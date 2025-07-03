@@ -10,9 +10,9 @@
     "modules-left": [
       "hyprland/workspaces",
       "hyprland/submap",
-      "sway/workspaces",
-      "sway/mode",
-      "sway/scratchpad",
+      // "sway/workspaces",
+      // "sway/mode",
+      // "sway/scratchpad",
       "custom/media"
     ],
     "modules-center": [

@@ -1,18 +1,24 @@
 [global]
+width = 600
+origin = bottom-right
 font = MiSans 12
-frame_size = 4
-frame_color = "#1e66f5"
+format = '<b>%s</b>%b'
+markup = full
+timeout = 10
+frame_color = "#89b4fa"
 separator_color= frame
+highlight = "#89b4fa"
 
 [urgency_low]
-background = "#eff1f5"
-foreground = "#4c4f69"
+background = "#1e1e2e"
+foreground = "#cdd6f4"
 
 [urgency_normal]
-background = "#eff1f5"
-foreground = "#4c4f69"
+background = "#1e1e2e"
+foreground = "#cdd6f4"
 
 [urgency_critical]
-background = "#eff1f5"
-foreground = "#4c4f69"
-frame_color = "#fe640b"
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+frame_color = "#fab387"
+
