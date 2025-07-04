@@ -1,5 +1,3 @@
-[env]
-WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
 padding = { x = 10, y = 5 }
@@ -8,19 +6,19 @@ padding = { x = 10, y = 5 }
 size = 12.0
 
 [font.bold]
-family = "Maple Mono"
+family = "Maple Mono NF"
 style = "Bold"
 
 [font.bold_italic]
-family = "Maple Mono"
+family = "Maple Mono NF"
 style = "Bold Italic"
 
 [font.italic]
-family = "Maple Mono"
+family = "Maple Mono NF"
 style = "Italic"
 
 [font.normal]
-family = "Maple Mono"
+family = "Maple Mono NF"
 style = "Regular"
 
 [general]

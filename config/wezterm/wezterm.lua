@@ -4,7 +4,7 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.font = wezterm.font("Maple Mono")
+config.font = wezterm.font("Maple Mono NF")
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.color_scheme = "Catppuccin Mocha"
 
