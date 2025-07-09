@@ -3,6 +3,7 @@ antidote load
 
 autoload -Uz promptinit && promptinit && prompt pure
 
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 export TERMINFO=/usr/lib/terminfo
 
