@@ -3,139 +3,7 @@
   {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": [
-      "hyprland/workspaces",
-      "hyprland/submap",
-      // "sway/workspaces",
-      // "sway/mode",
-      // "sway/scratchpad",
-      "custom/media"
-    ],
-    "modules-center": [
-      "mpd"
-    ],
-    "modules-right": [
-      "tray",
-      "clock"
-    ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-    "keyboard-state": {
-      "numlock": true,
-      "capslock": true,
-      "format": "{name} {icon}",
-      "format-icons": {
-        "locked": "",
-        "unlocked": ""
-      }
-    },
-    "sway/mode": {
-      "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-      "format": "{icon} {count}",
-      "show-empty": false,
-      "format-icons": [
-        "",
-        ""
-      ],
-      "tooltip": true,
-      "tooltip-format": "{app}: {title}"
-    },
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": "",
-        "deactivated": ""
-      }
-    },
-    "mpd": {
-      "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-      "format-disconnected": "Disconnected ",
-      "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-      "server": "127.0.0.1",
-      "port": 6600,
-      "password": "1qaz#EDC",
-      "unknown-tag": "N/A",
-      "interval": 1,
-      "consume-icons": {
-        "on": " "
-      },
-      "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ",
-        "on": " "
-      },
-      "repeat-icons": {
-        "on": " "
-      },
-      "single-icons": {
-        "on": "1 "
-      },
-      "state-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip-format": "MPD (connected)",
-      "tooltip-format-disconnected": "MPD (disconnected)",
-      "on-click": "/sbin/mpc toggle"
-    },
-    "tray": {
-      // "icon-size": 21,
-      "spacing": 10
-    },
-    "clock": {
-      // "timezone": "America/New_York",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "{:%Y-%m-%d %H:%M}"
-    },
-    "custom/media": {
-      "format": "{icon} {text}",
-      "return-type": "json",
-      "max-length": 40,
-      "format-icons": {
-        "spotify": "",
-        "default": "🎜"
-      },
-      "escape": true,
-      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-      // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
-    "custom/power": {
-      "format": "⏻ ",
-      "tooltip": false,
-      "menu": "on-click",
-      "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-      "menu-actions": {
-        "shutdown": "shutdown",
-        "reboot": "reboot",
-        "suspend": "systemctl suspend",
-        "hibernate": "systemctl hibernate"
-      }
-    }
-  },
-  {
-    "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -147,27 +15,18 @@
       "battery",
       "pulseaudio"
     ],
-    "modules-center": [],
-    "modules-right": [
-      "network#speed"
+    "modules-center": [
+      "hyprland/workspaces",
+      "hyprland/submap"
+      // "sway/workspaces",
+      // "sway/mode",
+      // "sway/scratchpad",
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "modules-right": [
+      "tray",
+      "network#speed",
+      "clock"
+    ],
     "keyboard-state": {
       "numlock": true,
       "capslock": true,
@@ -177,64 +36,12 @@
         "unlocked": ""
       }
     },
-    "sway/mode": {
-      "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-      "format": "{icon} {count}",
-      "show-empty": false,
-      "format-icons": [
-        "",
-        ""
-      ],
-      "tooltip": true,
-      "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-      "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-      "format-disconnected": "Disconnected ",
-      "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-      "server": "127.0.0.1",
-      "port": 6600,
-      "password": "1qaz#EDC",
-      "unknown-tag": "N/A",
-      "interval": 1,
-      "consume-icons": {
-        "on": " "
-      },
-      "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ",
-        "on": " "
-      },
-      "repeat-icons": {
-        "on": " "
-      },
-      "single-icons": {
-        "on": "1 "
-      },
-      "state-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip-format": "MPD (connected)",
-      "tooltip-format-disconnected": "MPD (disconnected)",
-      "on-click": "/sbin/mpc toggle"
-    },
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
         "activated": "",
         "deactivated": ""
       }
-    },
-    "tray": {
-      // "icon-size": 21,
-      "spacing": 10
-    },
-    "clock": {
-      // "timezone": "America/New_York",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format": "{:%Y-%m-%d %H:%M}"
     },
     "cpu": {
       "format": "{usage}% ",
@@ -253,21 +60,6 @@
         "",
         "",
         ""
-      ]
-    },
-    "backlight": {
-      // "device": "acpi_video1",
-      "format": "{percent}% {icon}",
-      "format-icons": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
       ]
     },
     "battery": {
@@ -289,50 +81,6 @@
         "",
         "",
         ""
-      ]
-    },
-    "battery#bat2": {
-      "bat": "BAT2"
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "network": {
-      // "interface": "wlp2*", // (Optional) To force the use of this interface
-      "format-wifi": "{essid} ({signalStrength}%) ",
-      "format-ethernet": "{ipaddr}/{cidr} ",
-      "tooltip-format": "{ifname} via {gwaddr} ",
-      "format-linked": "{ifname} (No IP) ",
-      "format-disconnected": "Disconnected ⚠",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "network#speed": {
-      "interval": 2,
-      "interface": "wlan0*", // (Optional) To force the use of this interface
-      "format": "{ifname}",
-      "format-wifi": "{icon}  {bandwidthDownBytes}  {bandwidthUpBytes} ",
-      "format-ethernet": "{icon}  {bandwidthDownBytes}   {bandwidthUpBytes} ",
-      "format-disconnected": "󰌙",
-      "tooltip-format": "{ipaddr}",
-      "format-linked": "󰈁 {ifname} (No IP)",
-      "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-      "tooltip-format-ethernet": "{ifname} 󰌘",
-      "tooltip-format-disconnected": "󰌙 Disconnected",
-      "max-length": 30,
-      "format-icons": [
-        "󰤯",
-        "󰤟",
-        "󰤢",
-        "󰤥",
-        "󰤨"
       ]
     },
     "pulseaudio": {
@@ -358,29 +106,74 @@
       },
       "on-click": "pavucontrol"
     },
-    "custom/media": {
-      "format": "{icon} {text}",
-      "return-type": "json",
-      "max-length": 40,
-      "format-icons": {
-        "spotify": "",
-        "default": "🎜"
-      },
-      "escape": true,
-      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-      // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "network": {
+      // "interface": "wlp2*", // (Optional) To force the use of this interface
+      "format-wifi": "{essid} ({signalStrength}%) ",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "tooltip-format": "{ifname} via {gwaddr} ",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": "Disconnected ⚠",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-    "custom/power": {
-      "format": "⏻ ",
-      "tooltip": false,
-      "menu": "on-click",
-      "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-      "menu-actions": {
-        "shutdown": "shutdown",
-        "reboot": "reboot",
-        "suspend": "systemctl suspend",
-        "hibernate": "systemctl hibernate"
-      }
+    "network#speed": {
+      "interval": 2,
+      "interface": "wlan0", // (Optional) To force the use of this interface
+      "format": "{ifname}",
+      "format-wifi": "{icon}  {bandwidthDownBytes}  {bandwidthUpBytes} ",
+      "format-ethernet": "{icon}  {bandwidthDownBytes}   {bandwidthUpBytes} ",
+      "format-disconnected": "󰌙",
+      "tooltip-format": "{ipaddr}",
+      "format-linked": "󰈁 {ifname} (No IP)",
+      "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+      "tooltip-format-ethernet": "{ifname} 󰌘",
+      "tooltip-format-disconnected": "󰌙 Disconnected",
+      "max-length": 30,
+      "format-icons": [
+        "󰤯",
+        "󰤟",
+        "󰤢",
+        "󰤥",
+        "󰤨"
+      ]
+    },
+    "mpd": {
+      "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+      "format-disconnected": "Disconnected ",
+      "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+      "server": "127.0.0.1",
+      "port": 6600,
+      "password": "1qaz#EDC",
+      "unknown-tag": "N/A",
+      "interval": 1,
+      "consume-icons": {
+        "on": " "
+      },
+      "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ",
+        "on": " "
+      },
+      "repeat-icons": {
+        "on": " "
+      },
+      "single-icons": {
+        "on": "1 "
+      },
+      "state-icons": {
+        "paused": "",
+        "playing": ""
+      },
+      "tooltip-format": "MPD (connected)",
+      "tooltip-format-disconnected": "MPD (disconnected)",
+      "on-click": "/sbin/mpc toggle"
+    },
+    "tray": {
+      "icon-size": 14,
+      "spacing": 10
+    },
+    "clock": {
+      // "timezone": "America/New_York",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format": "{:%Y-%m-%d %H:%M}"
     }
   }
 ]
