@@ -8,24 +8,20 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
+      "clock",
+      "tray",
+    ],
+    "modules-center": [
       "cpu",
       "memory",
       "temperature",
-      "keyboard-state",
-      "battery",
-      "pulseaudio"
-    ],
-    "modules-center": [
       "hyprland/workspaces",
-      "hyprland/submap"
-      // "sway/workspaces",
-      // "sway/mode",
-      // "sway/scratchpad",
+      "hyprland/submap",
+      "battery",
+      "pulseaudio",
     ],
     "modules-right": [
-      "tray",
-      "network#speed",
-      "clock"
+      "network#speed"
     ],
     "keyboard-state": {
       "numlock": true,
