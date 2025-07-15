@@ -20,8 +20,8 @@
       "pulseaudio"
     ],
     "modules-right": [
-      "clock",
-      "tray"
+      "tray",
+      "clock"
     ],
     "keyboard-state": {
       "numlock": true,
