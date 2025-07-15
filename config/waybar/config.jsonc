@@ -8,8 +8,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-      "clock",
-      "tray",
+      "network#speed"
     ],
     "modules-center": [
       "cpu",
@@ -18,10 +17,11 @@
       "hyprland/workspaces",
       "hyprland/submap",
       "battery",
-      "pulseaudio",
+      "pulseaudio"
     ],
     "modules-right": [
-      "network#speed"
+      "clock",
+      "tray"
     ],
     "keyboard-state": {
       "numlock": true,
