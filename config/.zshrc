@@ -25,6 +25,9 @@ export FNM_RESOLVE_ENGINES="true"
 export FNM_ARCH="x64"
 rehash
 
+# Foundry
+export PATH=$HOME/.config/.foundry/bin:$PATH; 
+
 source $HOME/.profile
 
 fastfetch
