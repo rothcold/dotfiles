@@ -6,19 +6,19 @@ padding = { x = 10, y = 5 }
 size = 10.0
 
 [font.bold]
-family = "Maple Mono NF"
+family = "Maple Mono NF CN"
 style = "Bold"
 
 [font.bold_italic]
-family = "Maple Mono NF"
+family = "Maple Mono NF CN"
 style = "Bold Italic"
 
 [font.italic]
-family = "Maple Mono NF"
+family = "Maple Mono NF CN"
 style = "Italic"
 
 [font.normal]
-family = "Maple Mono NF"
+family = "Maple Mono NF CN"
 style = "Regular"
 
 [general]
